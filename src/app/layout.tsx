@@ -19,6 +19,9 @@ const syncopate = Syncopate({
 export const metadata: Metadata = {
   title: "FEROX ROAMER | Find Your Journey Companion",
   description: "Connect with fellow explorers. Find travel companions, share hidden spots, and embark on journeys that redefine the horizon.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
