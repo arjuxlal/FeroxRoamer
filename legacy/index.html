@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEROX ROAMER | Find Your Journey Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0A0A0B; color: white; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+        .font-heading { font-family: 'Syncopate', sans-serif; text-transform: uppercase; letter-spacing: 0.5em; }
+        
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(10,10,11,0.5), rgba(10,10,11,0.8));
+            z-index: -1;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-gold {
+            background-color: #E5B37A;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(229, 179, 122, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(229, 179, 122, 0.5);
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(229, 179, 122, 0.5);
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="Assets/Public/That_birds_contiouslymove_to_other_side_extended_74c6ad3a6b (1).mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <nav class="fixed top-0 w-full z-50 py-4 px-10 flex justify-between items-center glass-nav">
+        <div class="flex items-center gap-4">
+            <img src="Assets/Public/ChatGPT Image Mar 1, 2026, 09_18_38 PM.png" alt="Logo" class="h-10 w-auto">
+            <div class="font-heading text-sm tracking-widest hidden sm:block">FEROX ROAMER</div>
+        </div>
+        <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest opacity-70">
+            <a href="#about" class="hover:opacity-100 transition">About</a>
+            <a href="#discover" class="hover:opacity-100 transition">Discover</a>
+            <a href="#community" class="hover:opacity-100 transition">Community</a>
+        </div>
+        <button class="btn-gold text-black px-6 py-2 text-xs font-bold uppercase tracking-tighter">Join Now</button>
+    </nav>
+
+    <main class="relative z-10">
+        <section class="h-screen flex flex-col justify-center items-center px-6 text-center">
+            <h1 id="hero-title" class="font-heading text-4xl md:text-7xl mb-6 opacity-0 translate-y-10">
+                Roam <br> <span class="text-[#E5B37A]">Together</span>
+            </h1>
+            <p id="hero-sub" class="max-w-xl text-gray-300 text-lg mb-8 opacity-0">
+                Connect with fellow explorers. Find travel companions, share hidden spots, and embark on journeys that redefine the horizon.
+            </p>
+            <div id="hero-cta" class="opacity-0">
+                <a href="#discover" class="btn-gold text-black px-12 py-5 uppercase text-xs font-bold tracking-[0.3em] inline-block">
+                    Explore
+                </a>
+            </div>
+        </section>
+
+        <section id="discover" class="min-h-screen bg-[#0A0A0B]/80 py-32 px-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-24">
+                    <span class="text-[#E5B37A] text-xs font-bold tracking-widest uppercase mb-4 block">The Experience</span>
+                    <h2 class="text-4xl md:text-5xl font-heading mb-6">Forge Paths <br> with Friends</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                        FEROX ROAMER isn't just about the destination. It's about the people you meet and the stories you write together in the wild.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card p-10 rounded-2xl">
+                        <div class="w-12 h-12 bg-[#E5B37A]/10 rounded-lg flex items-center justify-center mb-8">
+                            <svg class="w-6 h-6 text-[#E5B37A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-heading mb-4 text-white">Find Buddies</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Match with travelers who share your pace and passion for the unknown.</p>
+                    </div>
+
+                    <div class="feature-card p-10 rounded-2xl">
+                        <div class="w-12 h-12 bg-[#E5B37A]/10 rounded-lg flex items-center justify-center mb-8">
+                            <svg class="w-6 h-6 text-[#E5B37A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-heading mb-4 text-white">Pin Coordinates</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Save your favorite coordinates and let fellow rovers discover the beauty you found.</p>
+                    </div>
+
+                    <div class="feature-card p-10 rounded-2xl">
+                        <div class="w-12 h-12 bg-[#E5B37A]/10 rounded-lg flex items-center justify-center mb-8">
+                            <svg class="w-6 h-6 text-[#E5B37A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-heading mb-4 text-white">Chat With Buddies</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Real-time chat to connect and plan your next adventures together across the globe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="py-32 px-10 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <span class="text-[#E5B37A] text-xs font-bold tracking-widest uppercase">Community</span>
+                    <h2 class="text-4xl md:text-5xl font-heading">Beyond the <br> Solo Path</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Join a network of rugged explorers who believe that some vistas are too beautiful to be seen alone. FEROX ROAMER bridges the gap between solitude and shared discovery.
+                    </p>
+                    <div class="pt-6">
+                        <button onclick="document.body.style.overflow='hidden'; document.getElementById('gallery-modal').classList.remove('hidden')" class="border border-white/20 px-10 py-4 uppercase text-xs tracking-[0.3em] hover:bg-white hover:text-black transition duration-500">
+                            View Gallery
+                        </button>
+                    </div>
+                </div>
+                <div class="aspect-square bg-zinc-900/50 border border-white/10 rounded-3xl flex items-center justify-center relative group overflow-hidden" id="live-feed-slideshow">
+                    <!-- Slideshow Images -->
+                    <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                        <img src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&h=800&w=800&fit=crop" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                        <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&h=800&w=800&fit=crop" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 group-hover:scale-110 transition duration-700 pointer-events-none"></div>
+                    
+                    <!-- Overlay Caption -->
+                    <div class="absolute bottom-10 left-10 right-10 z-20 pointer-events-none">
+                        <span class="text-[#E5B37A] text-[10px] font-bold tracking-widest uppercase mb-2 block">Live Feed</span>
+                        <h3 class="text-xl font-heading text-white">Explore The Unknown</h3>
+                        <p class="text-gray-300 text-sm mt-2">Discover breathtaking coordinates and real-time updates from fellow rovers around the globe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 px-10 border-t border-white/5 bg-[#0A0A0B]">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-4">
+                <img src="Assets/Public/ChatGPT Image Mar 1, 2026, 09_18_38 PM.png" alt="Logo" class="h-8 w-auto grayscale opacity-50">
+                <div class="font-heading text-xs tracking-widest opacity-50">FEROX ROAMER</div>
+            </div>
+            <div class="flex gap-10 text-[10px] uppercase tracking-widest opacity-30">
+                <button onclick="document.body.style.overflow='hidden'; document.getElementById('privacy-modal').classList.remove('hidden')" class="hover:opacity-100 transition-opacity uppercase">Privacy</button>
+                <button onclick="document.body.style.overflow='hidden'; document.getElementById('terms-modal').classList.remove('hidden')" class="hover:opacity-100 transition-opacity uppercase">Terms</button>
+                <span>© 2026 Ferox</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 p-4 md:p-10 backdrop-blur-md transition-opacity">
+        <div class="relative w-full max-w-4xl max-h-full flex flex-col bg-zinc-900/80 border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+                <h3 class="text-2xl font-heading text-white">Privacy Policy (India)</h3>
+                <button onclick="document.body.style.overflow=''; document.getElementById('privacy-modal').classList.add('hidden')" class="text-white hover:text-[#E5B37A] transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto pr-4 text-gray-300 text-sm leading-relaxed space-y-6">
+                <p><strong>1. Introduction</strong><br>Welcome to FEROX ROAMER. We respect your privacy and are committed to protecting your personal data in compliance with the Information Technology Act, 2000, and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 of India.</p>
+                <p><strong>2. Information Collection</strong><br>We collect personal information including but not limited to your name, email address, phone number, and location data when you use our platform to find travel buddies and share coordinates.</p>
+                <p><strong>3. Use of Information</strong><br>Your data is used to match you with compatible travelers, provide location-based services, and improve the platform. We do not sell your personal data to third parties.</p>
+                <p><strong>4. Data Security</strong><br>We implement commercially reasonable security practices complying with Indian standards to protect your sensitive personal data from unauthorized access or disclosure.</p>
+                <p><strong>5. Grievance Officer</strong><br>In accordance with the IT Act, 2000, if you have any discrepancies or grievances regarding processing of information, you can contact our Grievance Officer at legal@feroxroaming.in.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="terms-modal" class="hidden fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 p-4 md:p-10 backdrop-blur-md transition-opacity">
+        <div class="relative w-full max-w-4xl max-h-full flex flex-col bg-zinc-900/80 border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+                <h3 class="text-2xl font-heading text-white">Terms of Service (India)</h3>
+                <button onclick="document.body.style.overflow=''; document.getElementById('terms-modal').classList.add('hidden')" class="text-white hover:text-[#E5B37A] transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto pr-4 text-gray-300 text-sm leading-relaxed space-y-6">
+                <p><strong>1. Acceptance of Terms</strong><br>By accessing or using FEROX ROAMER, you agree to be bound by these Terms. If you disagree with any part, you may not access the service.</p>
+                <p><strong>2. User Conduct</strong><br>You agree to use this platform in compliance with all extant laws of India, including the Information Technology Act, 2000. Publishing defamatory, obscene, or unlawful material is strictly prohibited.</p>
+                <p><strong>3. Intermediary Status</strong><br>FEROX ROAMER operates as an "Intermediary" under Section 79 of the Information Technology Act, 2000. We do not actively monitor user-generated content but will take down unlawful content upon receiving actual knowledge/court order.</p>
+                <p><strong>4. Assumption of Risk</strong><br>Traveling involves inherent risks. FEROX ROAMER merely facilitates connections. You assume all risks associated with meeting and traveling with individuals connected through the platform.</p>
+                <p><strong>5. Governing Law & Jurisdiction</strong><br>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in New Delhi, India.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="hidden fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/95 p-4 md:p-10 backdrop-blur-md transition-opacity">
+        <div class="relative w-full max-w-6xl max-h-full flex flex-col pt-10">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-heading text-white">Destination Gallery</h3>
+                <button onclick="document.body.style.overflow=''; document.getElementById('gallery-modal').classList.add('hidden')" class="text-white hover:text-[#E5B37A] transition-colors p-2">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto pr-2 pb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/93684/pexels-photo-93684.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/2444403/pexels-photo-2444403.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/1933239/pexels-photo-1933239.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <div class="aspect-[4/3] relative rounded-xl overflow-hidden group cursor-pointer">
+                        <img src="https://images.pexels.com/photos/754263/pexels-photo-754263.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Destination" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GSAP Entrance Animations
+        window.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.5 }});
+
+            tl.to("#hero-title", { opacity: 1, y: 0, delay: 0.5 })
+              .to("#hero-sub", { opacity: 1, y: 0 }, "-=1")
+              .to("#hero-cta", { opacity: 1, y: 0 }, "-=1");
+
+            // Scroll animations for sections
+            gsap.from(".feature-card", {
+                scrollTrigger: {
+                    trigger: "#discover",
+                    start: "top 80%",
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power2.out",
+                clearProps: "all"
+            });
+
+            // Live Feed Slideshow
+            const slides = document.querySelectorAll('#live-feed-slideshow .slide');
+            let currentSlide = 0;
+            if (slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('opacity-100');
+                    slides[currentSlide].classList.add('opacity-0');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.remove('opacity-0');
+                    slides[currentSlide].classList.add('opacity-100');
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>

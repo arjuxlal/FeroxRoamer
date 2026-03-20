@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+@theme {
+  --font-heading: 'Syncopate', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-gold: #E5B37A;
+  --color-obsidian: #0A0A0B;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0A0A0B;
+  --foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-gold {
+  background-color: #E5B37A;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 179, 122, 0.3);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(229, 179, 122, 0.5);
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05); /* Brighter base */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* More visible border */
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(229, 179, 122, 0.5);
+  transform: translateY(-10px);
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+  object-fit: cover;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(10, 10, 11, 0.5), rgba(10, 10, 11, 0.8));
+  z-index: -5;
 }
