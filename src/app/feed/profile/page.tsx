@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import {
-    User, Camera, Phone, Edit3, BadgeCheck, X, Check, Loader2, Upload
+    User, Camera, Phone, Edit3, BadgeCheck, X, Check, Loader2, Upload, LogOut
 } from "lucide-react";
 import { Post, PostCard } from "@/components/PostCard";
 
@@ -100,6 +100,12 @@ export default function ProfilePage() {
         };
         load();
     }, [router]);
+
+    const handleSignOut = async () => {
+        const supabase = createClient();
+        await supabase.auth.signOut();
+        window.location.href = "/";
+    };
 
     const openEdit = () => {
         setEditForm({
@@ -202,14 +208,24 @@ export default function ProfilePage() {
                     )}
                 </div>
 
-                {/* Edit Button */}
-                <button
-                    onClick={openEdit}
-                    className="shrink-0 px-4 py-2 border border-white/10 text-xs text-gray-400 hover:text-white hover:border-gold/30 transition-all flex items-center gap-2 cursor-pointer rounded-sm"
-                >
-                    <Edit3 size={12} />
-                    Edit Profile
-                </button>
+                {/* Actions */}
+                <div className="shrink-0 flex items-center gap-2">
+                    <button
+                        onClick={openEdit}
+                        className="px-4 py-2 border border-white/10 text-xs text-gray-400 hover:text-white hover:border-gold/30 transition-all flex items-center gap-2 cursor-pointer rounded-sm"
+                    >
+                        <Edit3 size={12} />
+                        <span className="hidden sm:inline">Edit Profile</span>
+                        <span className="sm:hidden">Edit</span>
+                    </button>
+                    <button
+                        onClick={handleSignOut}
+                        className="p-2 border border-white/10 text-gray-400 hover:text-red-400 hover:border-red-400/30 transition-all flex items-center justify-center cursor-pointer rounded-sm lg:hidden"
+                        aria-label="Logout"
+                    >
+                        <LogOut size={16} />
+                    </button>
+                </div>
             </div>
 
             {/* === STATS === */}
